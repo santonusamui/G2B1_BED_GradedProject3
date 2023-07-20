@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Ticket Tracker Appliction</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">Ticket Tracker Appliction</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/tickets}">Tickets</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/tickets/new}">New Tickets</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<h1>List of Tickets</h1>
+		</div>
+
+		<form th:action="@{/tickets/search}" class="form-inline">
+			<input type="search" name="ticketTitle" th:value="${ticketTitle}" placeholder="Ticket Title"
+				class="form-control-sm ml-5 mr-2 mb-3" />
+			<input type="search" name="ticketShortDescription" th:value="${ticketShortDescription}"
+				placeholder="Ticket Short Description" class="form-control-sm mr-2 mb-3" />
+			<button type="submit" class="btn btn-success btn-sm mb-3">Search</button>
+		</form>
+
+
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th style="text-align: center">#</th>
+					<th style="text-align: center">Ticket Title</th>
+					<th style="text-align: center">Ticket Short Description</th>
+					<th style="text-align: center">Ticket Created on</th>
+					<th style="text-align: center">Actions</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="ticket: ${tickets}">
+					<td align="center" th:text="${ticket.id}"></td>
+					<td align="center" th:text="${ticket.ticketTitle}"></td>
+					<td align="center" th:text="${ticket.ticketShortDescription}"></td>
+					<td align="center" th:text="${ticket.ticketCreatedOn}"></td>
+
+					<td align="center">
+
+						<a th:href="@{/tickets/edit/{id}(id=${ticket.id})}" class="btn btn-primary">
+							Update
+						</a>
+
+
+						<a th:href="@{/tickets/{id}(id=${ticket.id})}" class="btn btn-danger">
+							Delete
+						</a>
+						<a th:href="@{/tickets/view/{id}(id=${ticket.id})}" class="btn btn-info">
+							View
+						</a>
+
+
+					</td>
+
+
+				</tr>
+			</tbody>
+
+		</table>
+		<br><br><br><br>
+		<center>
+			<font face="Monotype Corsiva" color=#0000FF size="4">
+				<bi><b> ------ Created By the Group, G2B1 ------ </b></i>
+			</font>
+		</center>
+
+	</div>
+</body>
+
+</html>

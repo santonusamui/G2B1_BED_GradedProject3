@@ -1,0 +1,19 @@
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (1, 'Howrah to Chennai', '2023-01-23', 'Down Coromondal Express Train','Ticket1');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (2, 'Howrah to Mumbai', '2023-06-08', 'Jana Satabdi Express Train','Ticket2');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (3, 'Mumbai To Goa', '2023-04-17', 'West Cost Express Train','Ticket3');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (4, 'Howrah to Puri', '2023-06-10', 'Pilgrimage Train','Ticket4');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (5, 'Chennai to Nellore', '2023-03-15', 'East Central Train','Ticket5');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (6, 'Howrah to Bandel', '2023-06-25', 'Local Train of West Bengal','Ticket6');
+
+
+insert into tickets (id, ticket_content, ticket_created_on, ticket_short_description, ticket_title) values (7, 'Behala to Science City', '2023-02-25', 'For Bus of Kolkata','Bus C-21');
